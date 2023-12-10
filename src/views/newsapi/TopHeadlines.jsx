@@ -9,7 +9,7 @@ const TopHeadlines = () => {
 
   const { isLoading, data, error, makeRequest } = useRequestData();
 
-  const [ searchKey, setSearchKey ] = useState( "openAI" );
+  const [ searchKey, setSearchKey ] = useState( "" );
 
   const [ language, setLanguage ] = useState( "en" );
 
@@ -22,7 +22,7 @@ const TopHeadlines = () => {
     makeRequest( "https://newsapi.org/v2/top-headlines?country=us&category=business&q=" + searchKey + "&pageSize=50&language=" + language + "&apiKey=3ce4eed9a78b4a22aadff41589164f32", "GET" )
     // makeRequest( `https://newsapi.org/v2/everything?q=${searchKey}&pageSize=50&language=en&apiKey=3ce4eed9a78b4a22aadff41589164f32`, "GET" )
 
-  }, [language] )
+  }, [language, searchKey] )
 
   const handleSearch = e => {
 
@@ -41,8 +41,20 @@ const TopHeadlines = () => {
 
       <form onSubmit={ e => handleSearch(e) }>
 
-        <input type="search" onChange={(e) => setSearchKey( e.target.value )} 
-        placeholder='Søg noget' className='input input-bordered'/>
+        {/* <input type="search" onChange={(e) => setSearchKey( e.target.value )} 
+        placeholder='Søg noget' className='input input-bordered'/> */}
+        
+        <select onChange={ e => setSearchKey( e.target.value ) } className="select select-bordered w-full max-w-xs">
+          <option disabled selected>Search here</option>
+          <option>Sports</option>
+          <option>Business</option>
+          <option>General</option>
+          <option>BitCoin</option>
+          <option>Entertainment</option>
+          <option>Health</option>
+          <option>Science</option>
+          <option>Politics</option>
+        </select>
       
       </form>
 
