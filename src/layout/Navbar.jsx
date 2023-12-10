@@ -97,7 +97,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <details>
-                                <summary>News - Everything</summary>
+                                <summary>News</summary>
                                 <ul className="p-2">
                                     <li>
                                         <NavLink to="/newseverything" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">

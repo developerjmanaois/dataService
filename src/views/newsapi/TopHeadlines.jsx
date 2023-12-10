@@ -46,7 +46,7 @@ const TopHeadlines = () => {
         
         <select onChange={ e => setSearchKey( e.target.value ) } className="select select-bordered w-full max-w-xs">
           <option disabled selected>Search here</option>
-          <option>Sports</option>
+          <option value="sports">Sports</option>
           <option>Business</option>
           <option>General</option>
           <option>BitCoin</option>
