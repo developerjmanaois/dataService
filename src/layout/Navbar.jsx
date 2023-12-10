@@ -189,6 +189,9 @@ const Navbar = () => {
                                 <NavLink to="/newseverything" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                     News - Everything
                                 </NavLink>
+                                <NavLink to="/topheadlines" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                    Top Headlines
+                                </NavLink>
                             </div>
                         </div>
                     </div>
