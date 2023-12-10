@@ -19,6 +19,7 @@ import PostAdmin from './views/jsonplaceholder/PostAdmin';
 import PostCreate from './views/jsonplaceholder/PostCreate';
 import PostEdit from './views/jsonplaceholder/PostEdit';
 import Everything from './views/newsapi/Everything';
+import TopHeadlines from './views/newsapi/TopHeadlines';
 
 function App () {
 
@@ -36,6 +37,7 @@ function App () {
           <Route path="login" element={ <Login /> } />
           {/* NewsApi */}
           <Route path="newseverything" element={ <Everything /> } />
+          <Route path="topheadlines" element={ <TopHeadlines /> } />
           {/* SWAPI */}
           <Route path="starships" element={ <Starships /> } />
           {/* JSONPlaceholder */}
