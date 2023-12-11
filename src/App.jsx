@@ -20,6 +20,8 @@ import PostCreate from './views/jsonplaceholder/PostCreate';
 import PostEdit from './views/jsonplaceholder/PostEdit';
 import Everything from './views/newsapi/Everything';
 import TopHeadlines from './views/newsapi/TopHeadlines';
+import Weather from './views/openweather/Weather';
+import Weather1 from './views/openweather/Weather';
 
 function App () {
 
@@ -40,6 +42,9 @@ function App () {
           <Route path="topheadlines" element={ <TopHeadlines /> } />
           {/* SWAPI */}
           <Route path="starships" element={ <Starships /> } />
+          {/* Open Weather */}
+          <Route path="weather" element={ <Weather /> } />
+          <Route path="weather1" element={ <Weather1 /> } />
           {/* JSONPlaceholder */}
           <Route path="posts" element={ <Posts /> } />
           <Route path="post/:postID" element={ <Post /> } />

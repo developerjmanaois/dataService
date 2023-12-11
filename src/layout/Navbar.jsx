@@ -97,11 +97,27 @@ const Navbar = () => {
                         </li>
                         <li>
                             <details>
-                                <summary>News - Everything</summary>
+                                <summary>News</summary>
                                 <ul className="p-2">
                                     <li>
                                         <NavLink to="/newseverything" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                             Everything
+                                        </NavLink>
+                                    </li>
+                                    
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary>Open Weather</summary>
+                                <ul className="p-2">
+                                    <li>
+                                        <NavLink to="/weather" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Current Weather
+                                        </NavLink>
+                                        <NavLink to="/weather1" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Current Weather w/DataList
                                         </NavLink>
                                     </li>
                                     
