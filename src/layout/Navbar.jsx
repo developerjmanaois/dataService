@@ -104,6 +104,11 @@ const Navbar = () => {
                                             Everything
                                         </NavLink>
                                     </li>
+                                    <li>
+                                        <NavLink to="/topheadlines" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Top Headlines
+                                        </NavLink>
+                                    </li>
                                     
                                 </ul>
                             </details>
@@ -204,9 +209,6 @@ const Navbar = () => {
                             <div className='absolute right-0 hidden w-48 overflow-hidden bg-white rounded-md shadow-lg group-hover:block'>
                                 <NavLink to="/newseverything" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                     News - Everything
-                                </NavLink>
-                                <NavLink to="/topheadlines" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Top Headlines
                                 </NavLink>
                             </div>
                         </div>
