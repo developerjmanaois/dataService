@@ -8,7 +8,7 @@ const useRequestData = () => {
     const [ data, setData ] = useState( null );
     const [ error, setError ] = useState( null );
 
-    const makeRequest = async ( apiurl ) => {
+    const makeRequest = async ( apiurl, method = "GET", bodydata = null, headers = null, params = null ) => {
 
         setisLoading( true )
 
@@ -16,7 +16,14 @@ const useRequestData = () => {
 
             try {
 
-                let response = await axios.get( apiurl )
+                let response
+
+                switch ( method ) {
+
+                    case "GET":
+                        response = await axios.get( apiurl, { headers, params: params } )
+
+                }
 
                 if ( response.data ) {
 

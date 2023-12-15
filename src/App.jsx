@@ -28,6 +28,7 @@ import Weathercard from './views/openweather/Weathercard';
 import Pollution from './views/openweather/pollution';
 import Hobbies from './views/rapidapi/Hobbies';
 import LoveCalc from './views/rapidapi/LoveCalc';
+import Facts from './views/rapidapi/Facts';
 
 function App () {
 
@@ -46,6 +47,7 @@ function App () {
           {/* RapiApi */}
           <Route path="hobbies" element={ <Hobbies /> } />
           <Route path="lovecalc" element={ <LoveCalc /> } />
+          <Route path="facts" element={ <Facts /> } />
           {/* NewsApi */}
           <Route path="newseverything" element={ <Everything /> } />
           <Route path="topheadlines" element={ <TopHeadlines /> } />
