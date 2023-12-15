@@ -97,6 +97,23 @@ const Navbar = () => {
                         </li>
                         <li>
                             <details>
+                                <summary>RapidApi</summary>
+                                <ul className="p-2">
+                                    <li>
+                                        <NavLink to="/hobbies" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Hobbies
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/lovecalc" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Love Calculator
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
                                 <summary>News</summary>
                                 <ul className="p-2">
                                     <li>
