@@ -21,7 +21,11 @@ import PostEdit from './views/jsonplaceholder/PostEdit';
 import Everything from './views/newsapi/Everything';
 import TopHeadlines from './views/newsapi/TopHeadlines';
 import Weather from './views/openweather/Weather';
-import Weather1 from './views/openweather/Weather';
+import Weather1 from './views/openweather/Weather1';
+import Weather3 from './views/openweather/weather3';
+import Weather4 from './views/openweather/weather4';
+import Weathercard from './views/openweather/Weathercard';
+import Pollution from './views/openweather/pollution';
 
 function App () {
 
@@ -45,6 +49,10 @@ function App () {
           {/* Open Weather */}
           <Route path="weather" element={ <Weather /> } />
           <Route path="weather1" element={ <Weather1 /> } />
+          <Route path="weather3" element={ <Weather3 /> } />
+          <Route path="weather4" element={ <Weather4 /> } />
+          <Route path="weathercard" element={ <Weathercard /> } />
+          <Route path="pollution" element={ <Pollution /> } />
           {/* JSONPlaceholder */}
           <Route path="posts" element={ <Posts /> } />
           <Route path="post/:postID" element={ <Post /> } />

@@ -124,6 +124,15 @@ const Navbar = () => {
                                         <NavLink to="/weather1" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                             Current Weather w/DataList
                                         </NavLink>
+                                        <NavLink to="/weather3" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Weather DAWA-datalist
+                                        </NavLink>
+                                        <NavLink to="/weather4" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Weather - med Data fra DAWA og Leafletmap
+                                        </NavLink>
+                                        <NavLink to="/pollution" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Pollution
+                                        </NavLink>
                                     </li>
                                     
                                 </ul>

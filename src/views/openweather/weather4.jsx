@@ -5,8 +5,9 @@ import Error from '../../components/Error';
 import { FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 import postnrJSON from './postnumre.json';
 import Weathercard from './Weathercard';
+import LeafletMap from '../../components/LeafletMap';
 
-const Weather3 = () => {
+const Weather4 = () => {
 
     // https://api.openweathermap.org/data/2.5/weather?zip=8000,dk&appid=d67effa013a7380f994c8d74b052d3d6
 
@@ -37,7 +38,7 @@ const Weather3 = () => {
   return (
     <div>
       
-        <h1 className='my-4'>HejVejret for en udvalgt by - fx Grenå (8500)</h1>
+        <h1 className='my-4'>Vejret for en udvalgt by - med DAWA og Leaflet</h1>
 
         { isLoading && <Loader /> }
         { error && <Error /> }
@@ -72,10 +73,14 @@ const Weather3 = () => {
 
         </datalist>
 
-        { data && <Weathercard data={data} />}
+        <div className='grid grid-cols-2 gap-5 content-center'>
+            <div className='justify-center'>{ data && <Weathercard data={data} />}</div>
+
+            <div>{ data && <LeafletMap coord={ [data.coord.lat, data.coord.lon] } info={ data.weather[0].description } />}</div>
+        </div>
 
     </div>
   )
 }
 
-export default Weather3;
+export default Weather4;
