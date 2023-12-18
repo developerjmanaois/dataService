@@ -160,96 +160,26 @@ const Navbar = () => {
                                 </ul>
                             </details>
                         </li>
+                        <li>
+                            <details>
+                                <summary>BygSelv</summary>
+                                <ul className="p-2">
+                                    <li>
+                                        <NavLink to="/coffee" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Hot Coffee
+                                        </NavLink>
+                                    </li>
+                                    
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <a className="btn">Button</a>
                 </div>
             </div>
-            {/* <div className="navbar bg-base-100">
-                <div>
-                    <a href="#">LOGO A/S</a>
-                </div>
 
-                <div>
-                    <NavLink to="/" className='hover:text-gray-200'>
-                        Home
-                    </NavLink>
-                    <NavLink to="/about" className='hover:text-gray-200'>
-                        Om os
-                    </NavLink>
-                    <NavLink to="/news" className='hover:text-gray-200'>
-                        Nyheder
-                    </NavLink>
-                    <NavLink to="/contact" className='hover:text-gray-200' >
-                        Kontakt
-                    </NavLink>
-                    <div className="relative">
-                        <div className='hover:text-gray-200 group'>
-                            JSONPlaceholder
-
-                            <div className='absolute right-0 hidden w-48 overflow-hidden bg-white rounded-md shadow-lg group-hover:block'>
-                                <div>
-                                    <NavLink to="/postadmin" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    PostAdmin
-                                    </NavLink>
-                                </div>
-                                <div>
-                                    <NavLink to="/straships" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Starships
-                                    </NavLink>
-                                </div>
-                                <div>
-                                    <NavLink to="/todos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Todos
-                                    </NavLink>
-                                </div>
-                                <div>
-                                    <NavLink to="/photos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Photos
-                                    </NavLink>
-                                </div>
-                                <div>
-                                    <NavLink to="/posts" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Posts
-                                    </NavLink>
-                                </div>
-                                <div>
-                                    <NavLink to="/post" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Post
-                                    </NavLink>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className='hover:text-gray-200 group'>
-                            SWAPI
-
-                            <div className='absolute right-0 hidden w-48 overflow-hidden bg-white rounded-md shadow-lg group-hover:block'>
-                                <NavLink to="/straships" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    Starships
-                                </NavLink>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className='hover:text-gray-200 group'>
-                            Everything
-
-                            <div className='absolute right-0 hidden w-48 overflow-hidden bg-white rounded-md shadow-lg group-hover:block'>
-                                <NavLink to="/newseverything" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                    News - Everything
-                                </NavLink>
-                            </div>
-                        </div>
-                    </div>
-                    <NavLink to="/login" className='hover:text-gray-200'>
-                        Login
-                    </NavLink>
-                </div>
-
-            </div> */}
         </nav>
     )
 }

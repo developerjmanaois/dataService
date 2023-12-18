@@ -29,6 +29,8 @@ import Pollution from './views/openweather/pollution';
 import Hobbies from './views/rapidapi/Hobbies';
 import LoveCalc from './views/rapidapi/LoveCalc';
 import Facts from './views/rapidapi/Facts';
+import Coffee from './views/bygselv/Coffee';
+import ReadMore from './views/bygselv/ReadMore';
 
 function App () {
 
@@ -44,6 +46,10 @@ function App () {
           <Route path="contact" element={ <Contact /> } />
           <Route path="news" element={ <News /> } />
           <Route path="login" element={ <Login /> } />
+          {/* BygSelv */}
+          <Route path="coffee" element={ <Coffee /> } />
+          <Route path="readmore" element={ <ReadMore /> } />
+          <Route path="readmore/:postID" element={ <ReadMore /> } />
           {/* RapiApi */}
           <Route path="hobbies" element={ <Hobbies /> } />
           <Route path="lovecalc" element={ <LoveCalc /> } />
