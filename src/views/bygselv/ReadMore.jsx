@@ -26,26 +26,27 @@ makeRequest("https://api.sampleapis.com/coffee/hot/" + (postID || 1));
       {isLoading && <Loader />}
       {error && <h2>Error ...</h2>}
 
-      <div className="card w-96 bg-base-100 shadow-xl">
         
         { data &&
+        <div className="card w-96 bg-base-100 shadow-xl image-full">
 
-        <div key={ data.id }>
-            <div className="card-body">
+        
+            <figure><img src={ data.image } alt="coffee"/></figure>
+            <div className="card-body" key={ data.id }>
                 <h2 className="card-title text-xl font-bold">{ data.title }</h2>
                 <p>{ data.description }</p>
-                <p>{ data.ingredients }</p>
+                <p>Ingredients: { data.ingredients }</p>
+                
+                <div className="card-actions justify-end">
+                    <button className="btn btn-primary">
+                        <Link to="/coffee">&lt;&lt; Tilbage til alle posts</Link>
+                    </button>
+                </div>
             </div>
-            <div className="card-actions justify-end">
-                <button className="btn btn-primary">
-                    <Link to="/coffee">&lt;&lt; Tilbage til alle posts</Link>
-                </button>
-            </div>
-        </div>
-
-        }
 
        </div>
+        }
+
     
       </div>
   
