@@ -173,6 +173,24 @@ const Navbar = () => {
                                 </ul>
                             </details>
                         </li>
+                        <li>
+                            <details>
+                                <summary>Airtable</summary>
+                                <ul className="p-2">
+                                    <li>
+                                        <NavLink to="/datalist" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Data List
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/datalistopgave" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            Data List Opgave
+                                        </NavLink>
+                                    </li>
+                                    
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">

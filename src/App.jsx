@@ -31,6 +31,8 @@ import LoveCalc from './views/rapidapi/LoveCalc';
 import Facts from './views/rapidapi/Facts';
 import Coffee from './views/bygselv/Coffee';
 import ReadMore from './views/bygselv/ReadMore';
+import DataList from './views/airtable/DataList';
+import DataListOpgave from './views/airtable/DataListOpgaver';
 
 function App () {
 
@@ -46,6 +48,9 @@ function App () {
           <Route path="contact" element={ <Contact /> } />
           <Route path="news" element={ <News /> } />
           <Route path="login" element={ <Login /> } />
+          {/* DataList */}
+          <Route path="datalist" element={ <DataList /> } />
+          <Route path="datalistopgave" element={ <DataListOpgave /> } />
           {/* BygSelv */}
           <Route path="coffee" element={ <Coffee /> } />
           <Route path="readmore" element={ <ReadMore /> } />
