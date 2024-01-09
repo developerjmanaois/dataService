@@ -1,6 +1,13 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import useRequestData from '../../hooks/useRequestData';
+import { useParams } from 'react-router-dom';
+
 
 const PostCreate = () => {
+
+    const { data, isLoading, error, makeRequest } = useRequestData();
+    const postID = useParams()
 
     const [ title, setTitle ] = useState( "" )
     const [ body, setBody ] = useState( "" )

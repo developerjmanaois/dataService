@@ -33,6 +33,10 @@ import Coffee from './views/bygselv/Coffee';
 import ReadMore from './views/bygselv/ReadMore';
 import DataList from './views/airtable/DataList';
 import DataListOpgave from './views/airtable/DataListOpgaver';
+import MernApi from './views/mernapi/MernApi';
+import MyTodosCreate from './views/mernapi/MyTodosCreate';
+import MyTodosEdit from './views/mernapi/MyTodosEdit';
+import Mytodos from './views/mernapi/Mytodos';
 
 function App () {
 
@@ -48,6 +52,11 @@ function App () {
           <Route path="contact" element={ <Contact /> } />
           <Route path="news" element={ <News /> } />
           <Route path="login" element={ <Login /> } />
+          {/* MERN */}
+          <Route path="mernapi" element={ <MernApi /> } />
+          <Route path="mytodos" element={ <Mytodos /> } />
+          <Route path="mytodoscreate" element={ <MyTodosCreate /> } />
+          <Route path="mytodosedit/:todoID" element={ <MyTodosEdit /> } />
           {/* DataList */}
           <Route path="datalist" element={ <DataList /> } />
           <Route path="datalistopgave" element={ <DataListOpgave /> } />

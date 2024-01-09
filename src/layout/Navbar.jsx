@@ -29,7 +29,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-xl">LOGO</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-3">
                         <li>
                             <NavLink to="/" className='hover:text-gray-200'>
                                 Home
@@ -185,6 +185,34 @@ const Navbar = () => {
                                     <li>
                                         <NavLink to="/datalistopgave" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                             Data List Opgave
+                                        </NavLink>
+                                    </li>
+                                    
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary>MERN API</summary>
+                                <ul className="p-2">
+                                    <li>
+                                        <NavLink to="/mernapi" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            MernAPI - TodosAdmin
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/mytodos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            MernAPI - Todos
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/mytodoscreate" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            MyTodos - Create
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/mytodosedit" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                            MyTodos - Edit
                                         </NavLink>
                                     </li>
                                     

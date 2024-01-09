@@ -11,7 +11,7 @@ const PostAdmin = () => {
 
     const { data, isLoading, error, makeRequest } = useRequestData();
 
-    const { data: dataDelete, isLoading: isLoadingDelete, eroor: errorDelete, makeRequest: makeRequestDelete } = useRequestData();
+    const { data: dataDelete, isLoading: isLoadingDelete, error: errorDelete, makeRequest: makeRequestDelete } = useRequestData();
 
     useEffect( () => {
 
