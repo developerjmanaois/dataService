@@ -57,6 +57,7 @@ function App () {
           <Route path="mytodos" element={ <Mytodos /> } />
           <Route path="mytodoscreate" element={ <MyTodosCreate /> } />
           <Route path="mytodosedit/:todoID" element={ <MyTodosEdit /> } />
+          <Route path="mytodosedit" element={ <MyTodosEdit /> } />
           {/* DataList */}
           <Route path="datalist" element={ <DataList /> } />
           <Route path="datalistopgave" element={ <DataListOpgave /> } />

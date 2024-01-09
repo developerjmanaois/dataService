@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import useRequestData from '../../hooks/useRequestData'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const MyTodosCreate = () => {
 
     const { data, isLoading, error, makeRequest } = useRequestData();
-    const { todoID } = useParams();
+    
+    const navigate = useNavigate()
+    // const { todoID } = useParams();
 
-    useEffect( () => {
+    // useEffect( () => {
 
-        makeRequest( "http://localhost:5000/todos/" + todoID )
+    //     makeRequest( "http://localhost:5000/todos/" + todoID )
 
-    }, [] )
+    // }, [] )
 
     const handleSubmit = e => {
 
@@ -21,11 +23,13 @@ const MyTodosCreate = () => {
 
         makeRequest( "http://localhost:5000/todos", "POST", fd )
 
+        navigate( "/mytodosadmin" )
+
     }
 
   return (
     <div>
-        <h1 className="mb-6 text-3xl font-bold text-center">MERN - Create Todo</h1>
+        <h1 className="my-6 text-3xl font-bold text-center">MERN - Create Todo</h1>
 
         {
             data && <h2>Ny er oprettet - den fik ID: { data.created._id }</h2>
@@ -66,7 +70,7 @@ const MyTodosCreate = () => {
                     type="checkbox"
                     id='chkDone'
                     name='done'
-                    value='true'
+                    defaultValue='true'
                 />
             </div>
 

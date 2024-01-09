@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useRequestData from "../../hooks/useRequestData";
 import { useParams } from "react-router-dom";
 import Error from "../../components/Error";
@@ -6,14 +6,12 @@ import Loader from "../../components/Loader";
 
 const MyTodosEdit = () => {
 
+    const refDone = useRef()
+
     const { todoID } = useParams();
 
     const { data, isLoading, error, makeRequest } = useRequestData();
     const { data: dataPUT, isLoading: isLoadingPUT, error: errorPUT, makeRequest: makeRequestPUT } = useRequestData();
-
-    const [ title, setTitle ] = useState( "" )
-    const [ description, setDescription ] = useState( "" )
-    const [ done, setDone ] = useState( "" )
 
     useEffect( () => {
 
@@ -21,23 +19,17 @@ const MyTodosEdit = () => {
 
     }, [todoID] )
 
-    useEffect( () => {
-
-        if(data) {
-            setTitle(data.todo.title)
-            setDescription(data.todo.description)
-            setDone(data.todo.done)
-        }
-
-    }, [data] )
-
     const handleSubmit = e => {
 
         e.preventDefault();
 
-        const rettetTodo = { title: title, description: description }
+        const fd = new FormData(e.target)
 
-        makeRequestPUT( "http://localhost:5000/todos/" + todoID, "PUT", rettetTodo )
+        if( refDone.current.checked === false ) {
+            fd.append("done", false)
+        }
+
+        makeRequestPUT( "http://localhost:5000/todos/" + todoID, "PUT", fd )
 
     }
 
@@ -45,7 +37,7 @@ const MyTodosEdit = () => {
 
         <div>
 
-            <h1 className="mb-6 text-3xl font-bold text-center">MyTodo - Edit/update Posts</h1>
+            <h1 className="my-6 text-3xl font-bold text-center">MyTodo - Edit/update Posts</h1>
 
             { (error || errorPUT) && <Error /> }
             { (isLoading || isLoadingPUT) && <Loader /> }
@@ -61,44 +53,67 @@ const MyTodosEdit = () => {
                     </div>
             }
 
-            <form className='form-control' onSubmit={ handleSubmit }>
-                
-                <label htmlFor='inpTitle'>Title</label>
-                <input 
-                    id='inpTitle'
-                    type="text" 
-                    onInput={ e => setTitle( e.target.value )}
-                    value={ title }
-                    required
-                    placeholder="Title" 
-                    className="input input-bordered w-full" />
-                
-                <label htmlFor='txtDescription' className="mt-4">Description</label>
-                <textarea 
-                    id='txtDescription'
-                    onInput={ e => setDescription( e.target.value ) }
-                    value={ description }
-                    required
-                    placeholder="Description" 
-                    className="textarea textarea-bordered w-full" />
-                
-                <div className='w-fit'>
+            {
+                data &&
 
-                    <label htmlFor='chkDone' className="mt-4 mr-4">Udført</label>
+                <form className='form-control' onSubmit={ handleSubmit }>
+                    
+                    <label htmlFor='inpTitle'>Title</label>
                     <input 
-                        type="checkbox" 
-                        id="chkDone" 
-                        name="done" 
-                        value="true" 
-                        defaultChecked={ done } onChange={ e => e.checked ? setDone( true ) : setDone( false )} />
+                        id='inpTitle'
+                        type="text"
+                        name="title" 
+                        defaultValue={ data ? data.todo.title : null }
+                        required
+                        placeholder="Title" 
+                        className="input input-bordered w-full" />
+                    
+                    <label htmlFor='txtDescription' className="mt-4">Description</label>
+                    <textarea 
+                        id='txtDescription'
+                        name=""
+                        defaultValue={ data.todo.description }
+                        required
+                        placeholder="Description" 
+                        className="textarea textarea-bordered w-full" />
 
-                </div>
-                
-                
+                    <div>
+                        <figure>
+                            <h4>Nuværende billede</h4>
+                            <img src={"http://localhost:5000/images/" + ( dataPUT ? dataPUT.updated.image : data.todo.image )} width="70" alt="Nuværende todo-billede" />
+                        </figure>
+                    </div>
+                    <label htmlFor='inpImg' className="my-2">Vælg et billede</label>
+                    <input 
+                        id='inpImg'
+                        name='image'
+                        type="file"
+                        className='mb-2'
+                    />
+                    
+                    <div className='w-fit'>
 
-                <button type='submit' className='mt-4 btn'>Opret ny post</button>
+                        <label htmlFor='chkDone' className="mt-4 mr-4">Udført</label>
+                        <input 
+                            ref={ refDone }
+                            type="checkbox" 
+                            id="chkDone" 
+                            name="done" 
+                            defaultValue="true" 
+                            defaultChecked={ data.todo.done } 
+                            
+                            //onChange={ e => e.checked ? setDone( true ) : setDone( false )} 
+                            />
 
-            </form>
+                    </div>
+                    
+                    
+
+                    <button type='submit' className='mt-4 btn'>Ret Todo</button>
+
+                </form>
+            }
+
 
         </div>
 

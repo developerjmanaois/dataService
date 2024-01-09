@@ -210,11 +210,6 @@ const Navbar = () => {
                                             MyTodos - Create
                                         </NavLink>
                                     </li>
-                                    <li>
-                                        <NavLink to="/mytodosedit" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                            MyTodos - Edit
-                                        </NavLink>
-                                    </li>
                                     
                                 </ul>
                             </details>

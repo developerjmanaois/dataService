@@ -46,11 +46,14 @@ const MernApi = () => {
                       <th></th>
                       <th></th>
                       <th></th>
+                      <th></th>
+                      <th></th>
                       <th><Link to={ "/mytodoscreate/" } className="btn"><FaPlus size="1.5em" color="darkgreen"/></Link></th>
                   </tr>
                   <tr>
                       <th>ID</th>
                       <th>Title</th>
+                      <th>Image</th>
                       <th>Description</th>
                       <th>RET</th>
                       <th>SLET</th>
@@ -65,6 +68,7 @@ const MernApi = () => {
                           <tr key={p._id}>
                               <td>{p._id}</td>
                               <td>{p.title}</td>
+                              <td><img src={ "http://localhost:5000/images/" + p.image } width="100" alt="" /></td>
                               <td>{p.description}</td>
                               <td><Link to={ "/mytodosedit/" + p._id } className="btn"><FaEdit size="2em" color="darkgreen"/></Link></td>
                               <td><FaTrash onClick={ () => handleDelete( p._id, p.title ) } size="2em" color="darkred" className="cursor-pointer"/></td>
